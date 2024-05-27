@@ -2,7 +2,7 @@
   "include": [
     "src/global.d.ts",
     "src/**/*.ts",
-    "tests/**/*.ts",
+    "tests/**/*.ts"
   ],
   "compilerOptions": {
     /* Visit https://aka.ms/tsconfig.json to read more about this file */
