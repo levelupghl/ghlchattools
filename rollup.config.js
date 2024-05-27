@@ -12,8 +12,8 @@ const BANNER = readFileSync("./src/snippets/banner.css", { encoding: "utf8" })
 
 export const FILES_LIST = [
   {
-    input: "src/js/chat.ts",
-    output: "dist/js/chat.js",
+    input: "src/js/embedChat.ts",
+    output: "dist/js/embedChat.js",
   },
 ]
 export const REPLACE_VARS = {

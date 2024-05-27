@@ -25,10 +25,10 @@ async function showPurgeMessage() {
   )
   // TODO: create the urls from rollup.config.js FILES_LIST
   log(
-    `https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@${version}/dist/js/chat.js`
+    `https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@${version}/dist/js/embedChat.js`
   )
   log(
-    `https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@${version}/dist/js/chat.min.js`
+    `https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@${version}/dist/js/embedChat.min.js`
   )
 }
 

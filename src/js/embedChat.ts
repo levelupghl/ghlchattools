@@ -1,37 +1,44 @@
-// TODO: MOVE THIS TO IT'S OWN REPO??? ON @levelupghl org
-
 // Usage:
 // <div id="levelup-chat-embed"></div>
 // <script type="module">
-//   import { embedChat } from "https://cdn.jsdelivr.net/gh/highlevelthemes/levelup@v1.7/js/components/chatEmbed.js";
-//   embedChat();
+//   import { embedChat } from "https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@v1/dist/js/embedChat.min.js"
+//   embedChat("#levelup-chat-embed");
 // </script>
 
 const CHAT_EMBED_CONTAINER_SELECTOR = "#levelup-chat-embed"
-const MAX_ATTEMPTS = 20
+const GHL_CHAT_WIDGET_SELECTOR = "chat-widget"
 
-export const embedChat = (attempts = 1) => {
-  const embedDiv = document.querySelector(
-    CHAT_EMBED_CONTAINER_SELECTOR
-  ) as HTMLElement
+async function waitForChatLoad(): Promise<void> {
+  return new Promise<void>((resolve) => {
+    const handler = (event: LCChatWidgetLoadedEvent) => {
+      resolve()
+      window.removeEventListener("LC_chatWidgetLoaded", handler)
+    }
+    window.addEventListener("LC_chatWidgetLoaded", handler, false)
+  })
+}
+
+export const embedChat = async (containerSelector: string | undefined) => {
+  const selector = containerSelector || CHAT_EMBED_CONTAINER_SELECTOR
+  const embedDiv = document.querySelector(selector) as HTMLElement
   if (!embedDiv) {
+    console.error(
+      `embedChat: "${selector}" not found on page: unable to embed GHL chat widget`
+    )
     return
   }
-  const retry = () => {
-    if (attempts > MAX_ATTEMPTS) {
-      console.warn("__theme_name__: embedChat max attempts reached")
-      return
-    }
-    setTimeout(() => {
-      embedChat(attempts + 1)
-    }, 50 * attempts + 100)
+  if (!window.leadConnector?.chatWidget?.isLoaded) {
+    await waitForChatLoad()
   }
 
-  const chat = document.querySelector("chat-widget")
+  const chat = document.querySelector(GHL_CHAT_WIDGET_SELECTOR)
   const root = chat?.shadowRoot
 
   if (!chat || !root) {
-    return retry()
+    console.error(
+      `embedChat: unable to find GHL chat widget on page`
+    )
+    return
   }
 
   const button = root.querySelector(".lc_text-widget--btn") as HTMLElement
@@ -42,9 +49,11 @@ export const embedChat = (attempts = 1) => {
   ) as HTMLElement
 
   if (!button || !widget || !box || !heading) {
-    return retry()
+    console.error(`embedChat: unable to embed GHL chat widget in page: widget components not found`)
+    return
   }
 
+  // Remove the chat widget
   chat.parentElement?.removeChild(chat)
 
   // TODO: if mobile, don't set position: static
@@ -66,11 +75,13 @@ export const embedChat = (attempts = 1) => {
   // }
   // TODO: set ::slotted(.informational) fontSize = 14px
 
+  button.style.display = "none"
+
+  // Attach the chat widget to the in page container
   embedDiv.appendChild(chat)
 
-  button?.click()
-
-  button.style.display = "none"
+  // Open chat widget
+  window.leadConnector.chatWidget.openWidget()
 }
 
 // CHAT MESSAGE SENT TO USER
