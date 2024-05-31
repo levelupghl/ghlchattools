@@ -41,7 +41,7 @@ function buildFiles() {
       output: [
         {
           file: file.output,
-          format: "iife",
+          format: "es",
           sourcemap: true,
           banner: BANNER,
         },

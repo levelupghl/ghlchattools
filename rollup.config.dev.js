@@ -23,6 +23,9 @@ const serveConfig = {
     key: readFileSync(".certs/private.pem"),
     cert: readFileSync(".certs/primary.crt"),
   },
+  headers: {
+    "Access-Control-Allow-Origin": "*",
+  },
 }
 
 function buildFiles() {
@@ -43,7 +46,7 @@ function buildFiles() {
       output: [
         {
           dir: `${DEV_DIR}/js`,
-          format: "iife",
+          format: "es",
           sourcemap: true,
         },
       ],
