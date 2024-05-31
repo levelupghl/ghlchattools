@@ -2,7 +2,20 @@
 file.
 
 ####
+[v1.0.3](https://github.com/levelupghl/ghlchattools/compare/v1.0.2...v1.0.3)
+
+-
+Change build from iife to es module
+[`27a52c7`](https://github.com/levelupghl/ghlchattools/commit/27a52c77017db8cf048abba207e460750b7ae288)
+-
+Change default selector to #ghl-chat-embed
+[`4ef462e`](https://github.com/levelupghl/ghlchattools/commit/4ef462edd04774e2f5c6b0b33433403408c4e60e)
+
+####
 [v1.0.2](https://github.com/levelupghl/ghlchattools/compare/v1.0.1...v1.0.2)
+
+>
+31 May 2024
 
 -
 Rebuild
