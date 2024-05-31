@@ -38,6 +38,7 @@ function buildFiles() {
     ret.push({
       input: file.input,
       plugins: getPlugins(),
+      // TODO: standardize output for minify and dev build
       output: [
         {
           file: file.output,
@@ -54,7 +55,7 @@ function buildFiles() {
       output: [
         {
           file: file.output.replace(".js", ".min.js"),
-          format: "iife",
+          format: "es",
           sourcemap: true,
           banner: BANNER,
         },
