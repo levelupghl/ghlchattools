@@ -12,10 +12,11 @@ GHL chat tools
 # Usage
 
 ```html
-<div id="levelup-chat-embed"></div>
+<div id="ghl-chat-embed"></div>
 <script type="module">
-  import { embedChat } from "https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@v1/dist/js/embedChat.min.js";
-  embedChat("#levelup-chat-embed");
+  import { embedChat } from "https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@>=v1.0.4/dist/js/embedChat.min.js";
+  // Embed chat widget in the div with id="ghl-chat-embed"
+  embedChat("#ghl-chat-embed");
 </script>
 ```
 
