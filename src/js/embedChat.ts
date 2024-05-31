@@ -1,11 +1,11 @@
 // Usage:
-// <div id="levelup-chat-embed"></div>
+// <div id="ghl-chat-embed"></div>
 // <script type="module">
 //   import { embedChat } from "https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@v1/dist/js/embedChat.min.js"
-//   embedChat("#levelup-chat-embed");
+//   embedChat("#ghl-chat-embed");
 // </script>
 
-const CHAT_EMBED_CONTAINER_SELECTOR = "#levelup-chat-embed"
+const CHAT_EMBED_CONTAINER_SELECTOR = "#ghl-chat-embed"
 const GHL_CHAT_WIDGET_SELECTOR = "chat-widget"
 
 async function waitForChatLoad(): Promise<void> {
