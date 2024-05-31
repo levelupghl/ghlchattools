@@ -2,7 +2,23 @@
 file.
 
 ####
-1.0.1
+[v1.0.2](https://github.com/levelupghl/ghlchattools/compare/v1.0.1...v1.0.2)
+
+-
+Rebuild
+[`9682a62`](https://github.com/levelupghl/ghlchattools/commit/9682a62230204c3a9389070614834405bc4930e6)
+-
+Update to use GHL chat widget API
+[`2c9e9d0`](https://github.com/levelupghl/ghlchattools/commit/2c9e9d0c42a009030fc2c9dd96ed62cf152c6e02)
+-
+Update tsconfig.json
+[`3c627d9`](https://github.com/levelupghl/ghlchattools/commit/3c627d9187bf5af83c8e8adbd0af1c2cdbe62549)
+
+####
+v1.0.1
+
+>
+27 May 2024
 
 -
 Init

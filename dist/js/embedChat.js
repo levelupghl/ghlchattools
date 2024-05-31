@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up GHL Chat Tools
  * https//levelupghl.com
- * Version: v1.0.1
+ * Version: v1.0.2
  ****************************************/
 
 (function (exports) {
