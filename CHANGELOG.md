@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.4](https://github.com/levelupghl/ghlchattools/compare/v1.0.3...v1.0.4)
+
+-
+Fix minified build
+[`d486858`](https://github.com/levelupghl/ghlchattools/commit/d486858450dc150241d91254cac8191ffbefc538)
+
+####
 [v1.0.3](https://github.com/levelupghl/ghlchattools/compare/v1.0.2...v1.0.3)
+
+>
+31 May 2024
 
 -
 Change build from iife to es module
