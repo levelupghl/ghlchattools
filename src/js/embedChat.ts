@@ -1,9 +1,12 @@
 // Usage:
-// <div id="ghl-chat-embed"></div>
-// <script type="module">
-//   import { embedChat } from "https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@v1/dist/js/embedChat.min.js"
-//   embedChat("#ghl-chat-embed");
-// </script>
+/*
+<div id="ghl-chat-embed"></div>
+<script type="module">
+  import { embedChat } from "https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@v1/dist/js/embedChat.min.js";
+  // Embed chat widget in the div with id="ghl-chat-embed"
+  embedChat("#ghl-chat-embed");
+</script>
+*/
 
 const CHAT_EMBED_CONTAINER_SELECTOR = "#ghl-chat-embed"
 const GHL_CHAT_WIDGET_SELECTOR = "chat-widget"
