@@ -14,7 +14,7 @@ GHL chat tools
 ```html
 <div id="ghl-chat-embed"></div>
 <script type="module">
-  import { embedChat } from "https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@>=v1.0.4/dist/js/embedChat.min.js";
+  import { embedChat } from "https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@v1/dist/js/embedChat.min.js";
   // Embed chat widget in the div with id="ghl-chat-embed"
   embedChat("#ghl-chat-embed", {maxHeight: 700, autoScroll: true, scrollOffset: 20});
 </script>
