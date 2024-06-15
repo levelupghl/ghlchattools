@@ -28,7 +28,7 @@ const CHAT_EMBED_CONTAINER_SELECTOR = "#ghl-chat-embed"
 const GHL_CHAT_WIDGET_SELECTOR = "chat-widget"
 const DEFAULT_OPTIONS: Options = {
   maxHeight: 650,
-  autoScroll: true,
+  autoScroll: false,
   scrollOffset: 20,
 }
 
