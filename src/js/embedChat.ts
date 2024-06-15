@@ -1,15 +1,42 @@
-// Usage:
-/*
+/**
+ * Level Up Embed Chat
+ *
+ * Embeds GHL chat widget into a page. Works anywhere the GHL chat widget is embedded.
+ *
+ * If current browser is mobile or the height is less than maxHeight option,
+ * chat widget will be opened and not embedded. This prevents scroll issues
+ * on mobile or small screens where the chat widget is larger than the current
+ * browser height.
+ *
+ * Usage:
+
 <div id="ghl-chat-embed"></div>
 <script type="module">
   import { embedChat } from "https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@v1/dist/js/embedChat.min.js";
-  // Embed chat widget in the div with id="ghl-chat-embed"
-  embedChat("#ghl-chat-embed");
+  embedChat("#ghl-chat-embed", {maxHeight: 700, autoScroll: true});
 </script>
-*/
+
+ **/
+
+import {
+  browserHeightLessThan,
+  isMobileBrowser,
+  scrollToElement,
+} from "./lib/utils"
 
 const CHAT_EMBED_CONTAINER_SELECTOR = "#ghl-chat-embed"
 const GHL_CHAT_WIDGET_SELECTOR = "chat-widget"
+const DEFAULT_OPTIONS: Options = {
+  maxHeight: 650,
+  autoScroll: true,
+  scrollOffset: 20,
+}
+
+interface Options {
+  maxHeight: number
+  autoScroll: boolean
+  scrollOffset: number
+}
 
 async function waitForChatLoad(): Promise<void> {
   return new Promise<void>((resolve) => {
@@ -21,9 +48,41 @@ async function waitForChatLoad(): Promise<void> {
   })
 }
 
-export const embedChat = async (containerSelector: string | undefined) => {
+function getOptions(options: Options | undefined): Options {
+  const opts = { ...DEFAULT_OPTIONS }
+  if (!options) {
+    return opts
+  }
+  try {
+    if (options.maxHeight) {
+      opts.maxHeight =
+        typeof options.maxHeight === "number"
+          ? options.maxHeight
+          : parseInt(options.maxHeight)
+    }
+    if (options.autoScroll) {
+      opts.autoScroll = true
+      if (options.scrollOffset) {
+        opts.scrollOffset =
+          typeof options.scrollOffset === "number"
+            ? options.scrollOffset
+            : parseInt(options.scrollOffset)
+      }
+    }
+  } catch (err) {
+    console.error(`embedChat: invalid options, using defaults`)
+  }
+  return opts
+}
+
+export const embedChat = async (
+  containerSelector: string | undefined,
+  options: Options | undefined
+) => {
   const selector = containerSelector || CHAT_EMBED_CONTAINER_SELECTOR
+  const opts = getOptions(options)
   const embedDiv = document.querySelector(selector) as HTMLElement
+
   if (!embedDiv) {
     console.error(
       `embedChat: "${selector}" not found on page: unable to embed GHL chat widget`
@@ -34,13 +93,16 @@ export const embedChat = async (containerSelector: string | undefined) => {
     await waitForChatLoad()
   }
 
+  // Open chat widget instead of embedding on mobile or small screens
+  if (isMobileBrowser() || browserHeightLessThan(opts.maxHeight)) {
+    return window.leadConnector.chatWidget.openWidget()
+  }
+
   const chat = document.querySelector(GHL_CHAT_WIDGET_SELECTOR)
   const root = chat?.shadowRoot
 
   if (!chat || !root) {
-    console.error(
-      `embedChat: unable to find GHL chat widget on page`
-    )
+    console.error(`embedChat: unable to find GHL chat widget on page`)
     return
   }
 
@@ -52,7 +114,9 @@ export const embedChat = async (containerSelector: string | undefined) => {
   ) as HTMLElement
 
   if (!button || !widget || !box || !heading) {
-    console.error(`embedChat: unable to embed GHL chat widget in page: widget components not found`)
+    console.error(
+      `embedChat: unable to embed GHL chat widget in page: widget components not found`
+    )
     return
   }
 
@@ -85,6 +149,12 @@ export const embedChat = async (containerSelector: string | undefined) => {
 
   // Open chat widget
   window.leadConnector.chatWidget.openWidget()
+
+  if (opts.autoScroll) {
+    setTimeout(() => {
+      scrollToElement(embedDiv, opts.scrollOffset)
+    }, 100)
+  }
 }
 
 // CHAT MESSAGE SENT TO USER
