@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up GHL Chat Tools
  * https//levelupghl.com
- * Version: v1.0.5
+ * Version: v1.0.6
  ****************************************/
 
 function isMobileBrowser() {
@@ -72,7 +72,7 @@ const CHAT_EMBED_CONTAINER_SELECTOR = "#ghl-chat-embed";
 const GHL_CHAT_WIDGET_SELECTOR = "chat-widget";
 const DEFAULT_OPTIONS = {
   maxHeight: 650,
-  autoScroll: true,
+  autoScroll: false,
   scrollOffset: 20
 };
 function waitForChatLoad() {

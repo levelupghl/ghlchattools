@@ -2,7 +2,20 @@
 file.
 
 ####
+[v1.0.6](https://github.com/levelupghl/ghlchattools/compare/v1.0.5...v1.0.6)
+
+-
+Disable autoScroll by default
+[`af5cbbb`](https://github.com/levelupghl/ghlchattools/commit/af5cbbbb493dbde0aeba8219b08559cc692717f5)
+-
+Update README.md
+[`bb1f1e1`](https://github.com/levelupghl/ghlchattools/commit/bb1f1e190c6ba79c3693e2b207a93690b8538bf3)
+
+####
 [v1.0.5](https://github.com/levelupghl/ghlchattools/compare/v1.0.4...v1.0.5)
+
+>
+15 June 2024
 
 -
 Add support for mobile browser & autoScroll
