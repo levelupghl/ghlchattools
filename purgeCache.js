@@ -30,6 +30,12 @@ async function showPurgeMessage() {
   log(
     `https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@${version}/dist/js/embedChat.min.js`
   )
+  log(
+    `https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@${version}/dist/js/openChat.js`
+  )
+  log(
+    `https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@${version}/dist/js/openChat.min.js`
+  )
 }
 
 showPurgeMessage()
