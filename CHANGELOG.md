@@ -2,7 +2,20 @@
 file.
 
 ####
+[v1.0.7](https://github.com/levelupghl/ghlchattools/compare/v1.0.6...v1.0.7)
+
+-
+Add openChat module
+[`ccad5a1`](https://github.com/levelupghl/ghlchattools/commit/ccad5a1f47cf24bdf71f47d7a3ab7959f051b835)
+-
+Update README.md
+[`059a067`](https://github.com/levelupghl/ghlchattools/commit/059a0672f053c522c23edc9ba2dc2f8fc17219ea)
+
+####
 [v1.0.6](https://github.com/levelupghl/ghlchattools/compare/v1.0.5...v1.0.6)
+
+>
+15 June 2024
 
 -
 Disable autoScroll by default
