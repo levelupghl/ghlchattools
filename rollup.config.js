@@ -15,6 +15,10 @@ export const FILES_LIST = [
     input: "src/js/embedChat.ts",
     output: "dist/js/embedChat.js",
   },
+  {
+    input: "src/js/openChat.ts",
+    output: "dist/js/openChat.js",
+  },
 ]
 export const REPLACE_VARS = {
   preventAssignment: false,
