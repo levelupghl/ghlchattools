@@ -2,7 +2,20 @@
 file.
 
 ####
+[v1.0.9](https://github.com/levelupghl/ghlchattools/compare/v1.0.8...v1.0.9)
+
+-
+Update utils.ts
+[`d81ecde`](https://github.com/levelupghl/ghlchattools/commit/d81ecde201075a30ae4e96d51ce790ca71c995b1)
+-
+Update README.md
+[`d5b5251`](https://github.com/levelupghl/ghlchattools/commit/d5b525106f534899d04914874daadb9085ba4bf3)
+
+####
 [v1.0.8](https://github.com/levelupghl/ghlchattools/compare/v1.0.7...v1.0.8)
+
+>
+24 June 2024
 
 -
 Change maxHeight to minHeight

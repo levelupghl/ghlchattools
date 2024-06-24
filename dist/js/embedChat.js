@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up GHL Chat Tools
  * https//levelupghl.com
- * Version: v1.0.8
+ * Version: v1.0.9
  ****************************************/
 
 function isMobileBrowser() {
@@ -19,9 +19,9 @@ function isMobileBrowser() {
   ];
   return mobileAgents.some((mobileAgent) => mobileAgent.test(userAgent));
 }
-function browserHeightLessThan(maxHeight) {
+function browserHeightLessThan(height) {
   const currentHeight = window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
-  return currentHeight < maxHeight;
+  return currentHeight < height;
 }
 function scrollToElement(elem, scrollOffset = 0) {
   const elementPosition = elem.getBoundingClientRect().top + window.pageYOffset;
