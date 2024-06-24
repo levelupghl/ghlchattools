@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up GHL Chat Tools
  * https//levelupghl.com
- * Version: v1.0.7
+ * Version: v1.0.8
  ****************************************/
 
 function isMobileBrowser() {
@@ -71,7 +71,7 @@ var __async = (__this, __arguments, generator) => {
 const CHAT_EMBED_CONTAINER_SELECTOR = "#ghl-chat-embed";
 const GHL_CHAT_WIDGET_SELECTOR = "chat-widget";
 const DEFAULT_OPTIONS = {
-  maxHeight: 650,
+  minHeight: 650,
   autoScroll: false,
   scrollOffset: 20
 };
@@ -92,8 +92,8 @@ function getOptions(options) {
     return opts;
   }
   try {
-    if (options.maxHeight) {
-      opts.maxHeight = typeof options.maxHeight === "number" ? options.maxHeight : parseInt(options.maxHeight);
+    if (options.minHeight) {
+      opts.minHeight = typeof options.minHeight === "number" ? options.minHeight : parseInt(options.minHeight);
     }
     if (options.autoScroll) {
       opts.autoScroll = true;
@@ -120,7 +120,7 @@ const embedChat = (containerSelector, options) => __async(void 0, null, function
   if (!((_b = (_a = window.leadConnector) == null ? void 0 : _a.chatWidget) == null ? void 0 : _b.isLoaded)) {
     yield waitForChatLoad();
   }
-  if (isMobileBrowser() || browserHeightLessThan(opts.maxHeight)) {
+  if (isMobileBrowser() || browserHeightLessThan(opts.minHeight)) {
     return window.leadConnector.chatWidget.openWidget();
   }
   const chat = document.querySelector(GHL_CHAT_WIDGET_SELECTOR);

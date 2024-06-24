@@ -2,7 +2,20 @@
 file.
 
 ####
+[v1.0.8](https://github.com/levelupghl/ghlchattools/compare/v1.0.7...v1.0.8)
+
+-
+Change maxHeight to minHeight
+[`7d36a4d`](https://github.com/levelupghl/ghlchattools/commit/7d36a4d5c667ef788944526f4f9e396f98e30479)
+-
+Update purgeCache.js
+[`ebf0b51`](https://github.com/levelupghl/ghlchattools/commit/ebf0b5160fd73da99aadb0dc9d687dbc281e5d39)
+
+####
 [v1.0.7](https://github.com/levelupghl/ghlchattools/compare/v1.0.6...v1.0.7)
+
+>
+23 June 2024
 
 -
 Add openChat module

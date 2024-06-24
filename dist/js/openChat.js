@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up GHL Chat Tools
  * https//levelupghl.com
- * Version: v1.0.7
+ * Version: v1.0.8
  ****************************************/
 
 var __async = (__this, __arguments, generator) => {
