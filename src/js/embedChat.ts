@@ -3,7 +3,7 @@
  *
  * Embeds GHL chat widget into a page. Works anywhere the GHL chat widget is embedded.
  *
- * If current browser is mobile or the height is less than maxHeight option,
+ * If current browser is mobile or the height is less than minHeight option,
  * chat widget will be opened and not embedded. This prevents scroll issues
  * on mobile or small screens where the chat widget is larger than the current
  * browser height.
@@ -13,7 +13,7 @@
 <div id="ghl-chat-embed"></div>
 <script type="module">
   import { embedChat } from "https://cdn.jsdelivr.net/gh/levelupghl/ghlchattools@v1/dist/js/embedChat.min.js";
-  embedChat("#ghl-chat-embed", {maxHeight: 700, autoScroll: true});
+  embedChat("#ghl-chat-embed", {minHeight: 700, autoScroll: true});
 </script>
 
  **/
@@ -27,13 +27,13 @@ import {
 const CHAT_EMBED_CONTAINER_SELECTOR = "#ghl-chat-embed"
 const GHL_CHAT_WIDGET_SELECTOR = "chat-widget"
 const DEFAULT_OPTIONS: Options = {
-  maxHeight: 650,
+  minHeight: 650,
   autoScroll: false,
   scrollOffset: 20,
 }
 
 interface Options {
-  maxHeight: number
+  minHeight: number
   autoScroll: boolean
   scrollOffset: number
 }
@@ -54,11 +54,11 @@ function getOptions(options: Options | undefined): Options {
     return opts
   }
   try {
-    if (options.maxHeight) {
-      opts.maxHeight =
-        typeof options.maxHeight === "number"
-          ? options.maxHeight
-          : parseInt(options.maxHeight)
+    if (options.minHeight) {
+      opts.minHeight =
+        typeof options.minHeight === "number"
+          ? options.minHeight
+          : parseInt(options.minHeight)
     }
     if (options.autoScroll) {
       opts.autoScroll = true
@@ -94,7 +94,7 @@ export const embedChat = async (
   }
 
   // Open chat widget instead of embedding on mobile or small screens
-  if (isMobileBrowser() || browserHeightLessThan(opts.maxHeight)) {
+  if (isMobileBrowser() || browserHeightLessThan(opts.minHeight)) {
     return window.leadConnector.chatWidget.openWidget()
   }
 
