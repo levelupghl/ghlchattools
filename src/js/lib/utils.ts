@@ -14,12 +14,12 @@ export function isMobileBrowser(): boolean {
   return mobileAgents.some((mobileAgent) => mobileAgent.test(userAgent))
 }
 
-export function browserHeightLessThan(maxHeight: number): boolean {
+export function browserHeightLessThan(height: number): boolean {
   const currentHeight =
     window.innerHeight ||
     document.documentElement.clientHeight ||
     document.body.clientHeight
-  return currentHeight < maxHeight
+  return currentHeight < height
 }
 
 export function scrollToElement(
