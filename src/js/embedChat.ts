@@ -124,7 +124,7 @@ export const embedChat = async (
 
   widget.style.position = "static"
   widget.style.width = "100%"
-  box.style.maxWidth = "100%"
+  box.style.width = "100%"
 
   // Hide the chat bubble
   bubble.style.display = "none"
