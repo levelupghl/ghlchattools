@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.11](https://github.com/levelupghl/ghlchattools/compare/v1.0.10...v1.0.11)
+
+-
+Fix width for new widget
+[`f3bc4e5`](https://github.com/levelupghl/ghlchattools/commit/f3bc4e5d0bab209c35707d1deaee5fd78d1026a7)
+
+####
 [v1.0.10](https://github.com/levelupghl/ghlchattools/compare/v1.0.9...v1.0.10)
+
+>
+11 July 2024
 
 -
 Update to new version of GHL chat widget

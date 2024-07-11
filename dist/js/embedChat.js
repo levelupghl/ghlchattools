@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up GHL Chat Tools
  * https//levelupghl.com
- * Version: v1.0.10
+ * Version: v1.0.11
  ****************************************/
 
 function isMobileBrowser() {
@@ -141,7 +141,7 @@ const embedChat = (containerSelector, options) => __async(void 0, null, function
   (_c = chat.parentElement) == null ? void 0 : _c.removeChild(chat);
   widget.style.position = "static";
   widget.style.width = "100%";
-  box.style.maxWidth = "100%";
+  box.style.width = "100%";
   bubble.style.display = "none";
   embedDiv.appendChild(chat);
   window.leadConnector.chatWidget.openWidget();
