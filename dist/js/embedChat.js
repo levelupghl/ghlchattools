@@ -1,7 +1,7 @@
 /*!***************************************
  * Level Up GHL Chat Tools
  * https//levelupghl.com
- * Version: v1.0.11
+ * Version: v1.0.12
  ****************************************/
 
 function isMobileBrowser() {
@@ -132,6 +132,9 @@ const embedChat = (containerSelector, options) => __async(void 0, null, function
   const bubble = root.querySelector(".lc_text-widget--bubble");
   const widget = root.querySelector(".lc_text-widget");
   const box = root.querySelector(".lc_text-widget--box");
+  const close_button = root.querySelector(
+    ".lc_text-widget_heading_close--btn"
+  );
   if (!bubble || !widget || !box) {
     console.error(
       `embedChat: unable to embed GHL chat widget in page: widget components not found`
@@ -142,6 +145,7 @@ const embedChat = (containerSelector, options) => __async(void 0, null, function
   widget.style.position = "static";
   widget.style.width = "100%";
   box.style.width = "100%";
+  close_button.style.zIndex = "-1";
   bubble.style.display = "none";
   embedDiv.appendChild(chat);
   window.leadConnector.chatWidget.openWidget();

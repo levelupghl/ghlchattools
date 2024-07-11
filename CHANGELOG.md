@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.12](https://github.com/levelupghl/ghlchattools/compare/v1.0.11...v1.0.12)
+
+-
+Hide close button
+[`fdc396b`](https://github.com/levelupghl/ghlchattools/commit/fdc396b3021022024c3276f26a7c481c4ce92152)
+
+####
 [v1.0.11](https://github.com/levelupghl/ghlchattools/compare/v1.0.10...v1.0.11)
+
+>
+11 July 2024
 
 -
 Fix width for new widget
