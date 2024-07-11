@@ -109,6 +109,9 @@ export const embedChat = async (
   const bubble = root.querySelector(".lc_text-widget--bubble") as HTMLElement
   const widget = root.querySelector(".lc_text-widget") as HTMLElement
   const box = root.querySelector(".lc_text-widget--box") as HTMLElement
+  const close_button = root.querySelector(
+    ".lc_text-widget_heading_close--btn"
+  ) as HTMLElement
 
   if (!bubble || !widget || !box) {
     console.error(
@@ -125,6 +128,8 @@ export const embedChat = async (
   widget.style.position = "static"
   widget.style.width = "100%"
   box.style.width = "100%"
+  // Push close button behind heading to hide it and prevent click events
+  close_button.style.zIndex = "-1"
 
   // Hide the chat bubble
   bubble.style.display = "none"
