@@ -2,7 +2,17 @@
 file.
 
 ####
+[v1.0.10](https://github.com/levelupghl/ghlchattools/compare/v1.0.9...v1.0.10)
+
+-
+Update to new version of GHL chat widget
+[`2751657`](https://github.com/levelupghl/ghlchattools/commit/275165749eb4d46c29072c8e55b76a86f0aed487)
+
+####
 [v1.0.9](https://github.com/levelupghl/ghlchattools/compare/v1.0.8...v1.0.9)
+
+>
+24 June 2024
 
 -
 Update utils.ts
